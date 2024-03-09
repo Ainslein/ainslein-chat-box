@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Animated Vertical Twitch Chat Bubbles</title>
+    <style>
+        body {
+            font-family: 'Quicksand', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            max-width: 70%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .chat-bubble {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 15px;
+            position: relative;
+            background-color: #f8f8f8; /* Light gray bubble background */
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .user {
+            font-weight: bold;
+            color: #4caf50; /* Cute green user text */
+        }
+
+        .message-text {
+            color: #e91e63; /* Cute pink message text */
+        }
+
+        .user::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent #4caf50; /* Cute green user text */
+        }
+
+        .message-text::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #e91e63 transparent transparent; /* Cute pink message text */
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap">
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-bubble">
+        <span class="user">User123:</span>
+        <span class="message-text">Hello, this is a cute chat bubble!</span>
+    </div>
+
+    <div class="chat-bubble">
+        <span class="user">AnotherUser:</span>
+        <span class="message-text">Hi there! Loving the colors!</span>
+    </div>
+</div>
+
+</body>
+</html>
